@@ -2,7 +2,6 @@ package example;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +14,9 @@ import net.arnx.jsonic.JSON;
 public class RecvCodeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private static Logger log = Logger.getLogger(RecvCodeServlet.class.getName());
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String code = req.getParameter("code");
-		log.warning("code=" + code);
 		if (code != null){
 			String param = "";
 			param += "client_id=shuetsu512&";
