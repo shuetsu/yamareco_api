@@ -15,7 +15,10 @@ public class ReclistServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("application/json; charset=utf-8");
 		PrintWriter w = resp.getWriter();
-		w.println(Util.apiGet("getReclist/user/" + req.getParameter("uid") + "/" + req.getParameter("page")));
+		String path = "getReclist/user/" + 
+						req.getParameter("uid") + "/" + 
+						req.getParameter("page");
+		w.println(Util.apiGet(path, null));
 		w.close();
 	}
 }

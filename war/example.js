@@ -1,13 +1,16 @@
-function get_user_info(uid){
+var uid;
+
+function get_user_info(){
 	$.ajax({
 		dataType: 'json',
 		url: "/userinfo",
-		data: {uid: uid},
 		cache: false,
 		success: function(data){
 			if (data.err == 0){
-				$('#user_name').html(data.userinfo.uname + 'さんの記録');
-				get_reclist(uid);
+				uid = data.userinfo.uid;
+				$('#login_user').html('こんにちは ' + data.userinfo.uname + ' さん<br/><input type="button" value="山行記録の読み込み" onclick="get_reclist(uid);"/>');
+			}else{
+				$('#login_user').html('<a href="https://api.yamareco.com/api/v1/oauth?client_id=shuetsu512&redirect_uri=http://shuetsu512-yamareco.appspot.com/&response_type=code&scope=all">ヤマレコにログイン</a>');
 			}
 		}
 	});
@@ -56,3 +59,7 @@ function show_result(reclist){
 		$('#result tbody').append(r);
 	}
 }
+
+$(function(){
+	get_user_info();
+})

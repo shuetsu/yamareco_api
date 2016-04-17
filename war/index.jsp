@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page contentType="text/html;charset=utf8" %>
+<html>
 <head>
-
+<meta name="robots" content="noindex" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script type="text/javascript" src="./example.js"></script>
 </head>
@@ -11,10 +10,8 @@
 <a href="https://sites.google.com/site/apiforyamareco/">ヤマレコAPI</a>を利用して、過去100件の山行記録を拍手の多い順に並べる。
 </p>
 
-ユーザID:
-<input id="uid" type="text" value="49432"/>
-<input type="button" value="読み込み" onclick="get_user_info($('#uid').val());"/>
-<div id="user_name"></div>
+<div id="login_user"></div>
+
 <hr/>
 <table id="result" border="1" cellspacing="0">
 <tbody>

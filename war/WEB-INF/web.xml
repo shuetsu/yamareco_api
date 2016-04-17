@@ -5,6 +5,10 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
+    <servlet-name>recvcode</servlet-name>
+    <servlet-class>example.RecvCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>userinfo</servlet-name>
   	<servlet-class>example.UserInfoServlet</servlet-class>
   </servlet>
@@ -13,6 +17,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   	<servlet-class>example.ReclistServlet</servlet-class>
   </servlet>
   <servlet-mapping>
+  	<servlet-name>recvcode</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
   	<servlet-name>userinfo</servlet-name>
   	<url-pattern>/userinfo</url-pattern>
   </servlet-mapping>
@@ -20,4 +28,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   	<servlet-name>reclist</servlet-name>
   	<url-pattern>/reclist</url-pattern>
   </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>_</welcome-file>
+  </welcome-file-list>
 </web-app>
